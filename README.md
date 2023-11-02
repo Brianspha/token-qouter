@@ -1,22 +1,23 @@
 ## UNISWAP-SILLY-POC
-This is a silly POC that allows anyone to 
+
+This is a silly POC that allows anyone to
+
 - Swap ETHER for any ERC20 token
-- Get Tokens Qoutes 
+- Get Tokens Qoutes
 
 The exhcnage is faciliated by Curve Finance, Uniswap and SushiSwap
 
 ## Installation
-``yarn`` or ``npm i``
 
+`yarn` or `npm i`
 
 ### Build
 
-``yarn build`` or ``npm run build``
+`yarn build` or `npm run build`
 
 ## Unit testing
 
-``yarn test`` or ``npm run test``
-
+`yarn test` or `npm run test`
 
 ### Format
 
@@ -55,3 +56,7 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+## Note
+
+**Unit tests that revert are not included**
