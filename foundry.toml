@@ -1,6 +1,29 @@
-[profile.default]
-src = "src"
-out = "out"
-libs = ["lib"]
+# Full reference https://github.com/foundry-rs/foundry/tree/master/config
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+[profile.default]
+auto_detect_solc = false
+bytecode_hash = "none"
+cbor_metadata = false
+emv_version = "paris"
+fuzz = { runs = 1_000 }
+libs = ["node_modules", "lib"]
+optimizer = true
+optimizer_runs = 10_000
+out = "out"
+solc = "0.8.20"
+src = "src"
+test = "test"
+
+[fmt]
+bracket_spacing = true
+int_types = "long"
+line_length = 120
+multiline_func_header = "all"
+number_underscore = "thousands"
+quote_style = "double"
+tab_width = 4
+wrap_comments = true
+
+[rpc_endpoints]
+localhost = "http://localhost:8546"
+mainnet_eth = "https://mainnet.infura.io/v3/7ad69b009fb44985a5e12eed696a6886"

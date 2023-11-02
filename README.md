@@ -1,31 +1,22 @@
-## Foundry
+## UNISWAP-SILLY-POC
+This is a silly POC that allows anyone to 
+- Swap ETHER for any ERC20 token
+- Get Tokens Qoutes 
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The exhcnage is faciliated by Curve Finance, Uniswap and SushiSwap
 
-Foundry consists of:
+## Installation
+``yarn`` or ``npm i``
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
 
 ### Build
 
-```shell
-$ forge build
-```
+``yarn build`` or ``npm run build``
 
-### Test
+## Unit testing
 
-```shell
-$ forge test
-```
+``yarn test`` or ``npm run test``
+
 
 ### Format
 
