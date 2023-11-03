@@ -1,9 +1,13 @@
+# macOS system files
 .DS_Store
+
+# Node.js dependencies
 node_modules
+
+# Production build output
 /dist
 
-
-# local env files
+# Local environment files
 .env.local
 .env.*.local
 
@@ -13,11 +17,38 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor directories and files
+# Visual Studio Code and IDEA project files
 .idea
 .vscode
+
+# Editor-specific files
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+
+# Compiled output
+/out
+/cache
+/artifacts
+/cache_hardhat
+
+# Typechain files
+typechain
+typechain-types
+
+# Hardhat files
+/hardhat.config.ts
+/.hardhat/
+
+# Test coverage reports
+/coverage
+/coverage.json
+
+# Ignore development broadcast logs (optional)
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Documentation files (optional)
+/docs

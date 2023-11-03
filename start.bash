@@ -1,1 +1,1 @@
-ganache -f "https://mainnet.infura.io/v3/7ad69b009fb44985a5e12eed696a6886" --port 8546  --defaultBalanceEther 1000000000000000000 --networkId 137   -m "inch choose swap ivory inmate thunder patrol olive arrow ivory wagon worry" -u 0 -u 1 -u 2 -u 3 -u 4 -u 5 -u 6 -u 7 -u 8 -u 9 
+ganache -f "https://mainnet.infura.io/v3/" --port 8546  --defaultBalanceEther 1000000000000000000 --networkId 137   -m "inch choose swap ivory inmate thunder patrol olive arrow ivory wagon worry" -u 0 -u 1 -u 2 -u 3 -u 4 -u 5 -u 6 -u 7 -u 8 -u 9 

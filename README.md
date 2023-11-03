@@ -5,7 +5,9 @@ This is a silly POC that allows anyone to
 - Swap ETHER for any ERC20 token
 - Get Tokens Qoutes
 
-The exhcnage is faciliated by Curve Finance, Uniswap and SushiSwap
+The exchange is faciliated by Curve Finance, Uniswap and SushiSwap
+
+I would encourage one to run the base file inorder to fork the mainnet off course please ensure you have a valid mainnet rpc url
 
 ## Installation
 
