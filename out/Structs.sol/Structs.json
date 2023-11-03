@@ -1,0 +1,525 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "src/utils/Structs.sol",
+    "id": 46098,
+    "exportedSymbols": {
+      "IProvider": [
+        45626
+      ],
+      "IQuoter": [
+        44931
+      ],
+      "ISwap": [
+        45676
+      ],
+      "ISwapRouter": [
+        45031
+      ],
+      "IUniswapV2Router01": [
+        45984
+      ],
+      "IUniswapV3SwapCallback": [
+        44874
+      ],
+      "InitParams": [
+        46097
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1034:39",
+    "nodes": [
+      {
+        "id": 46061,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:39",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 46062,
+        "nodeType": "ImportDirective",
+        "src": "58:68:39",
+        "nodes": [],
+        "absolutePath": "node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "file": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46098,
+        "sourceUnit": 45032,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 46063,
+        "nodeType": "ImportDirective",
+        "src": "127:64:39",
+        "nodes": [],
+        "absolutePath": "node_modules/@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol",
+        "file": "@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46098,
+        "sourceUnit": 44932,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 46065,
+        "nodeType": "ImportDirective",
+        "src": "192:41:39",
+        "nodes": [],
+        "absolutePath": "src/curve/ISwap.sol",
+        "file": "../curve/ISwap.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46098,
+        "sourceUnit": 45677,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46064,
+              "name": "ISwap",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45676,
+              "src": "200:5:39",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46067,
+        "nodeType": "ImportDirective",
+        "src": "234:49:39",
+        "nodes": [],
+        "absolutePath": "src/curve/IProvider.sol",
+        "file": "../curve/IProvider.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46098,
+        "sourceUnit": 45627,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46066,
+              "name": "IProvider",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45626,
+              "src": "242:9:39",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46069,
+        "nodeType": "ImportDirective",
+        "src": "285:67:39",
+        "nodes": [],
+        "absolutePath": "src/sushi/IUniswapV2Router01.sol",
+        "file": "../sushi/IUniswapV2Router01.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46098,
+        "sourceUnit": 45985,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46068,
+              "name": "IUniswapV2Router01",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45984,
+              "src": "293:18:39",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46097,
+        "nodeType": "StructDefinition",
+        "src": "408:657:39",
+        "nodes": [],
+        "canonicalName": "InitParams",
+        "members": [
+          {
+            "constant": false,
+            "id": 46071,
+            "mutability": "mutable",
+            "name": "tokenIn",
+            "nameLocation": "440:7:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "432:15:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 46070,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "432:7:39",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46073,
+            "mutability": "mutable",
+            "name": "tokenOut",
+            "nameLocation": "503:8:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "495:16:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 46072,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "495:7:39",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46075,
+            "mutability": "mutable",
+            "name": "qouter",
+            "nameLocation": "567:6:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "559:14:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 46074,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "559:7:39",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46077,
+            "mutability": "mutable",
+            "name": "tokenInPool",
+            "nameLocation": "625:11:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "617:19:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 46076,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "617:7:39",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46079,
+            "mutability": "mutable",
+            "name": "tokenOutPool",
+            "nameLocation": "695:12:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "687:20:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 46078,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "687:7:39",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46081,
+            "mutability": "mutable",
+            "name": "poolFee",
+            "nameLocation": "765:7:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "758:14:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint24",
+              "typeString": "uint24"
+            },
+            "typeName": {
+              "id": 46080,
+              "name": "uint24",
+              "nodeType": "ElementaryTypeName",
+              "src": "758:6:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint24",
+                "typeString": "uint24"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46084,
+            "mutability": "mutable",
+            "name": "uniswap",
+            "nameLocation": "815:7:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "803:19:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISwapRouter_$45031",
+              "typeString": "contract ISwapRouter"
+            },
+            "typeName": {
+              "id": 46083,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46082,
+                "name": "ISwapRouter",
+                "nameLocations": [
+                  "803:11:39"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 45031,
+                "src": "803:11:39"
+              },
+              "referencedDeclaration": 45031,
+              "src": "803:11:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISwapRouter_$45031",
+                "typeString": "contract ISwapRouter"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46087,
+            "mutability": "mutable",
+            "name": "uniswapQuoter",
+            "nameLocation": "862:13:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "854:21:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IQuoter_$44931",
+              "typeString": "contract IQuoter"
+            },
+            "typeName": {
+              "id": 46086,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46085,
+                "name": "IQuoter",
+                "nameLocations": [
+                  "854:7:39"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 44931,
+                "src": "854:7:39"
+              },
+              "referencedDeclaration": 44931,
+              "src": "854:7:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IQuoter_$44931",
+                "typeString": "contract IQuoter"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46090,
+            "mutability": "mutable",
+            "name": "curveSwap",
+            "nameLocation": "910:9:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "904:15:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISwap_$45676",
+              "typeString": "contract ISwap"
+            },
+            "typeName": {
+              "id": 46089,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46088,
+                "name": "ISwap",
+                "nameLocations": [
+                  "904:5:39"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 45676,
+                "src": "904:5:39"
+              },
+              "referencedDeclaration": 45676,
+              "src": "904:5:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISwap_$45676",
+                "typeString": "contract ISwap"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46093,
+            "mutability": "mutable",
+            "name": "sushiSwapRouter",
+            "nameLocation": "970:15:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "951:34:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IUniswapV2Router01_$45984",
+              "typeString": "contract IUniswapV2Router01"
+            },
+            "typeName": {
+              "id": 46092,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46091,
+                "name": "IUniswapV2Router01",
+                "nameLocations": [
+                  "951:18:39"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 45984,
+                "src": "951:18:39"
+              },
+              "referencedDeclaration": 45984,
+              "src": "951:18:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IUniswapV2Router01_$45984",
+                "typeString": "contract IUniswapV2Router01"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46096,
+            "mutability": "mutable",
+            "name": "exchangeProvider",
+            "nameLocation": "1024:16:39",
+            "nodeType": "VariableDeclaration",
+            "scope": 46097,
+            "src": "1014:26:39",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IProvider_$45626",
+              "typeString": "contract IProvider"
+            },
+            "typeName": {
+              "id": 46095,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46094,
+                "name": "IProvider",
+                "nameLocations": [
+                  "1014:9:39"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 45626,
+                "src": "1014:9:39"
+              },
+              "referencedDeclaration": 45626,
+              "src": "1014:9:39",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IProvider_$45626",
+                "typeString": "contract IProvider"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "name": "InitParams",
+        "nameLocation": "415:10:39",
+        "scope": 46098,
+        "visibility": "public"
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 39
+}

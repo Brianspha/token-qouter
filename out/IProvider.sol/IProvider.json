@@ -1,0 +1,265 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "get_address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "get_address(uint256)": "493f4f74"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"get_address\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for a provider contract that provides addresses based on an ID.\",\"kind\":\"dev\",\"methods\":{\"get_address(uint256)\":{\"details\":\"Get the address associated with a specific ID.\",\"params\":{\"_id\":\"The ID for which to retrieve the address.\"},\"returns\":{\"_0\":\"The address associated with the given ID.\"}}},\"title\":\"IProvider\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/curve/IProvider.sol\":\"IProvider\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/curve/IProvider.sol\":{\"keccak256\":\"0x202f5ac1ac186815c0339f979e27aa82c6bb8aac22bec12786b1dda980608f53\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://668f38eaa4afd8c394ee0678e4bff54fd3f5caa917c3357373dcbf0b1fb07658\",\"dweb:/ipfs/QmWnA6YnWyEgg3qdo53JjVQi28ACVoeVwxdnSb2AWcWRcG\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_id",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "get_address",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "get_address(uint256)": {
+            "details": "Get the address associated with a specific ID.",
+            "params": {
+              "_id": "The ID for which to retrieve the address."
+            },
+            "returns": {
+              "_0": "The address associated with the given ID."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "@uniswap/=node_modules/@uniswap/",
+        "base64-sol/=node_modules/base64-sol/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none",
+        "appendCBOR": false
+      },
+      "compilationTarget": {
+        "src/curve/IProvider.sol": "IProvider"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/curve/IProvider.sol": {
+        "keccak256": "0x202f5ac1ac186815c0339f979e27aa82c6bb8aac22bec12786b1dda980608f53",
+        "urls": [
+          "bzz-raw://668f38eaa4afd8c394ee0678e4bff54fd3f5caa917c3357373dcbf0b1fb07658",
+          "dweb:/ipfs/QmWnA6YnWyEgg3qdo53JjVQi28ACVoeVwxdnSb2AWcWRcG"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/curve/IProvider.sol",
+    "id": 45627,
+    "exportedSymbols": {
+      "IProvider": [
+        45626
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:423:32",
+    "nodes": [
+      {
+        "id": 45616,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:32",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 45626,
+        "nodeType": "ContractDefinition",
+        "src": "175:286:32",
+        "nodes": [
+          {
+            "id": 45625,
+            "nodeType": "FunctionDefinition",
+            "src": "393:66:32",
+            "nodes": [],
+            "documentation": {
+              "id": 45618,
+              "nodeType": "StructuredDocumentation",
+              "src": "201:187:32",
+              "text": " @dev Get the address associated with a specific ID.\n @param _id The ID for which to retrieve the address.\n @return The address associated with the given ID."
+            },
+            "functionSelector": "493f4f74",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_address",
+            "nameLocation": "402:11:32",
+            "parameters": {
+              "id": 45621,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45620,
+                  "mutability": "mutable",
+                  "name": "_id",
+                  "nameLocation": "422:3:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45625,
+                  "src": "414:11:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45619,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "413:13:32"
+            },
+            "returnParameters": {
+              "id": 45624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45623,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45625,
+                  "src": "450:7:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45622,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:9:32"
+            },
+            "scope": 45626,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IProvider",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 45617,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:109:32",
+          "text": " @title IProvider\n @dev Interface for a provider contract that provides addresses based on an ID."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45626
+        ],
+        "name": "IProvider",
+        "nameLocation": "185:9:32",
+        "scope": 45627,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 32
+}

@@ -12,9 +12,15 @@ import {IWETH9} from "./tokens/IWETH9.sol";
 import "./utils/Structs.sol";
 import {Errors} from "./utils/Errors.sol";
 import "./utils/Enums.sol";
+import {Events} from "./utils/Events.sol";
 
 // Define the TokenQouter contract.
-contract TokenQouter is PausableUpgradeable, OwnableUpgradeable, Errors {
+contract TokenQouter is
+    PausableUpgradeable,
+    OwnableUpgradeable,
+    Errors,
+    Events
+{
     // Store initialization parameters in a public variable.
     InitParams public qouterParams;
 
@@ -115,7 +121,7 @@ contract TokenQouter is PausableUpgradeable, OwnableUpgradeable, Errors {
     function getQouteTokenInToTokenOut(
         uint256 amount,
         uint24 poolFee
-    ) external payable returns (uint256[] memory, address) {
+    ) external returns (uint256[] memory, address) {
         address tokenIn = qouterParams.tokenOut;
         address tokenOut = qouterParams.tokenIn;
         uint24 fee = poolFee;
@@ -147,6 +153,7 @@ contract TokenQouter is PausableUpgradeable, OwnableUpgradeable, Errors {
         qoutes[0] = quoteSushi;
         qoutes[1] = quoteCurve;
         qoutes[2] = quoteUNISWAP;
+        emit BestQoute(qoutes, poolAddress);
         return (qoutes, poolAddress);
     }
 

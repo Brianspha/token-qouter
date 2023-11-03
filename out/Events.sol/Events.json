@@ -1,0 +1,241 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "qoutes",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "poolAddress",
+          "type": "address"
+        }
+      ],
+      "name": "BestQoute",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50600980601d6000396000f3fe6080604052600080fd",
+    "sourceMap": "71:95:41:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fd",
+    "sourceMap": "71:95:41:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"qoutes\",\"type\":\"uint256[]\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddress\",\"type\":\"address\"}],\"name\":\"BestQoute\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Events.sol\":\"Events\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Events.sol\":{\"keccak256\":\"0xf9dd8c586ad4262333caaa9001b8f0edf553c3863b458465bcf3634421c9eb98\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6a7917cce140eab5e5aea612b03af657a5b21ce522cb45f4a3f96ec16a9600d7\",\"dweb:/ipfs/QmNQ1hWmVvHt5CbwWHsmssCrsUmb7sAas9kaziyCvJ8acQ\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "qoutes",
+              "type": "uint256[]",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "poolAddress",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "BestQoute",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "@uniswap/=node_modules/@uniswap/",
+        "base64-sol/=node_modules/base64-sol/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none",
+        "appendCBOR": false
+      },
+      "compilationTarget": {
+        "src/utils/Events.sol": "Events"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/utils/Events.sol": {
+        "keccak256": "0xf9dd8c586ad4262333caaa9001b8f0edf553c3863b458465bcf3634421c9eb98",
+        "urls": [
+          "bzz-raw://6a7917cce140eab5e5aea612b03af657a5b21ce522cb45f4a3f96ec16a9600d7",
+          "dweb:/ipfs/QmNQ1hWmVvHt5CbwWHsmssCrsUmb7sAas9kaziyCvJ8acQ"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/utils/Events.sol",
+    "id": 46309,
+    "exportedSymbols": {
+      "Events": [
+        46308
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "43:124:41",
+    "nodes": [
+      {
+        "id": 46300,
+        "nodeType": "PragmaDirective",
+        "src": "43:24:41",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 46308,
+        "nodeType": "ContractDefinition",
+        "src": "71:95:41",
+        "nodes": [
+          {
+            "id": 46307,
+            "nodeType": "EventDefinition",
+            "src": "93:71:41",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "e9cda41294389ae04d7c338828fa3884d5ff08cf3e0f8135b1a3bb98255dcc8f",
+            "name": "BestQoute",
+            "nameLocation": "99:9:41",
+            "parameters": {
+              "id": 46306,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46303,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "qoutes",
+                  "nameLocation": "128:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46307,
+                  "src": "109:25:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 46301,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "109:7:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 46302,
+                    "nodeType": "ArrayTypeName",
+                    "src": "109:9:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46305,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "poolAddress",
+                  "nameLocation": "151:11:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46307,
+                  "src": "135:27:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 46304,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "135:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "108:55:41"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Events",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          46308
+        ],
+        "name": "Events",
+        "nameLocation": "80:6:41",
+        "scope": 46309,
+        "usedErrors": [],
+        "usedEvents": [
+          46307
+        ]
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 41
+}

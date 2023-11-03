@@ -38,9 +38,9 @@ $ anvil
 ```
 
 ### Deploy
-
+To deply locally 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+yarn deploy:local::qouter   or npm run  deploy:local::qouter
 ```
 
 ### Cast
@@ -60,3 +60,11 @@ $ cast --help
 ## Note
 
 **Unit tests that revert are not included**
+
+
+## UI 
+The is not optimised as this is a POC i also couldnt test the swap since not all the dexes are deployed on testnets 
+
+## Starting
+
+``yarn dev`` or ``npm run dev``

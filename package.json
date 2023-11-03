@@ -1,31 +1,21 @@
 {
   "name": "uniswap-v2",
   "version": "1.0.0",
+  "private": true,
   "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "scripts": {
-    "test": "npx hardhat clean && forge test -vvvv",
-    "build": "npx hardhat clean && forge build"
-  },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
-    "@nomicfoundation/hardhat-ethers": "^3.0.0",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "@nomicfoundation/hardhat-verify": "^1.0.0",
-    "@typechain/ethers-v6": "^0.4.0",
-    "@typechain/hardhat": "^8.0.0",
-    "hardhat-gas-reporter": "^1.0.8",
-    "solidity-coverage": "^0.8.0",
-    "chai": "^4.2.0"
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite",
+    "test": "npx hardhat clean && forge test -vvvv",
+    "deploy:local::qouter": "forge script script/TokenQouter.s.sol:TokenQouterScript --fork-url 'http://127.0.0.1:8546' --broadcast --verify -vvvvv"
   },
+  "main": "index.js",
   "dependencies": {
+    "@mdi/font": "5.9.55",
+    "@metamask/detect-provider": "^2.0.0",
     "@nomicfoundation/hardhat-foundry": "^1.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
@@ -33,7 +23,72 @@
     "@openzeppelin/contracts-upgradeable": "^4.8.3",
     "@openzeppelin/hardhat-upgrades": "^2.2.1",
     "@uniswap/v3-periphery": "^1.4.4",
+    "bignumber.js": "^9.1.2",
+    "core-js": "^3.8.3",
     "dotenv": "^16.3.1",
-    "hardhat": "^2.18.3"
-  }
+    "ganache": "^7.9.1",
+    "ganache-cli": "^6.12.2",
+    "hardhat": "^2.18.3",
+    "roboto-fontface": "*",
+    "sweetalert2": "^11.7.27",
+    "vue": "^3.2.13",
+    "vue-material": "^1.0.0-beta-16",
+    "vue-material-ui": "^0.0.39-rc9",
+    "vue-select": "^3.20.2",
+    "vue-toast-notification": "^3.1.1",
+    "vuetify": "npm:@vuetify/nightly@next",
+    "web3": "^4.2.1",
+    "web3-eth-contract": "^4.0.5",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "@typechain/ethers-v6": "^0.4.0",
+    "@typechain/hardhat": "^8.0.0",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "hardhat-gas-reporter": "^1.0.8",
+    "solidity-coverage": "^0.8.0",
+    "vite": "^3.0.8",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vue-cli-plugin-vuetify": "~2.5.8"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "_id": "uniswap-v2@1.0.0",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
 }

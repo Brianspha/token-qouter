@@ -1,0 +1,203 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "InvalidAmount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidAmountOut",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidAmounts",
+      "type": "error"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50600980601d6000396000f3fe6080604052600080fd",
+    "sourceMap": "157:236:38:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fd",
+    "sourceMap": "157:236:38:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidAmountOut\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidAmounts\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Contract defining custom errors used in the TokenQouter contract.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Errors\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Errors.sol\":\"Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Errors.sol\":{\"keccak256\":\"0xcef6140e3ca52caf7ede7151e1868c5a88b0e1994717bbd3de174d11ade1c361\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ee503e9a599250f92ac55383bb3ae19d18d82d9b726b3777763f3318e0166e7b\",\"dweb:/ipfs/QmcBtiuzNAoHY9pVtoH4sprTjRf3dHwAJorCPpZxN6yYJm\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidAmount"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidAmountOut"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidAmounts"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "@uniswap/=node_modules/@uniswap/",
+        "base64-sol/=node_modules/base64-sol/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none",
+        "appendCBOR": false
+      },
+      "compilationTarget": {
+        "src/utils/Errors.sol": "Errors"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/utils/Errors.sol": {
+        "keccak256": "0xcef6140e3ca52caf7ede7151e1868c5a88b0e1994717bbd3de174d11ade1c361",
+        "urls": [
+          "bzz-raw://ee503e9a599250f92ac55383bb3ae19d18d82d9b726b3777763f3318e0166e7b",
+          "dweb:/ipfs/QmcBtiuzNAoHY9pVtoH4sprTjRf3dHwAJorCPpZxN6yYJm"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/utils/Errors.sol",
+    "id": 46060,
+    "exportedSymbols": {
+      "Errors": [
+        46059
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:362:38",
+    "nodes": [
+      {
+        "id": 46051,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:38",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 46059,
+        "nodeType": "ContractDefinition",
+        "src": "157:236:38",
+        "nodes": [
+          {
+            "id": 46054,
+            "nodeType": "ErrorDefinition",
+            "src": "221:22:38",
+            "nodes": [],
+            "errorSelector": "2c5211c6",
+            "name": "InvalidAmount",
+            "nameLocation": "227:13:38",
+            "parameters": {
+              "id": 46053,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "240:2:38"
+            }
+          },
+          {
+            "id": 46056,
+            "nodeType": "ErrorDefinition",
+            "src": "294:25:38",
+            "nodes": [],
+            "errorSelector": "4e969c58",
+            "name": "InvalidAmountOut",
+            "nameLocation": "300:16:38",
+            "parameters": {
+              "id": 46055,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:2:38"
+            }
+          },
+          {
+            "id": 46058,
+            "nodeType": "ErrorDefinition",
+            "src": "368:23:38",
+            "nodes": [],
+            "errorSelector": "d856fc5a",
+            "name": "InvalidAmounts",
+            "nameLocation": "374:14:38",
+            "parameters": {
+              "id": 46057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "388:2:38"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Errors",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 46052,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:98:38",
+          "text": " @title Errors\n @dev Contract defining custom errors used in the TokenQouter contract."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          46059
+        ],
+        "name": "Errors",
+        "nameLocation": "166:6:38",
+        "scope": 46060,
+        "usedErrors": [
+          46054,
+          46056,
+          46058
+        ],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 38
+}

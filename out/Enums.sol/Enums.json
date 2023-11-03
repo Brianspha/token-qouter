@@ -1,0 +1,77 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "src/utils/Enums.sol",
+    "id": 45344,
+    "exportedSymbols": {
+      "PROTOCOL": [
+        45343
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "41:100:33",
+    "nodes": [
+      {
+        "id": 45338,
+        "nodeType": "PragmaDirective",
+        "src": "41:24:33",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 45343,
+        "nodeType": "EnumDefinition",
+        "src": "68:72:33",
+        "nodes": [],
+        "canonicalName": "PROTOCOL",
+        "members": [
+          {
+            "id": 45339,
+            "name": "UNISWAPV3",
+            "nameLocation": "88:9:33",
+            "nodeType": "EnumValue",
+            "src": "88:9:33"
+          },
+          {
+            "id": 45340,
+            "name": "UNISWAPV2",
+            "nameLocation": "103:9:33",
+            "nodeType": "EnumValue",
+            "src": "103:9:33"
+          },
+          {
+            "id": 45341,
+            "name": "CURVE",
+            "nameLocation": "118:5:33",
+            "nodeType": "EnumValue",
+            "src": "118:5:33"
+          },
+          {
+            "id": 45342,
+            "name": "SUSHISWAP",
+            "nameLocation": "129:9:33",
+            "nodeType": "EnumValue",
+            "src": "129:9:33"
+          }
+        ],
+        "name": "PROTOCOL",
+        "nameLocation": "73:8:33"
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 33
+}
