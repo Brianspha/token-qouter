@@ -18,6 +18,10 @@ import {Events} from "./utils/Events.sol";
 /// @author brianspha
 /// @notice Contract that allows users to swap tokens
 /// @dev DO NOT USE IN PRODUCTION
+///@dev The implement a spit trade way more time would be needed to understand which
+/// @dev Tokens to targe such that we yield the highest possible tokens out
+/// @dev e.g. SWAPPING WETH->BNB->USDT etc for eg such that we get the best outcome
+/// @dev also slippage needs to be considered for all dexes
 contract TokenQouter is
     PausableUpgradeable,
     OwnableUpgradeable,
@@ -64,7 +68,8 @@ contract TokenQouter is
         uint256 sushiAmountIn = getAmount(amountIn, split[0], amountIn);
         uint256 curveAmountIn = getAmount(amountIn, split[1], amountIn);
         uint256 uniswapAmountIn = getAmount(amountIn, split[2], amountIn);
-        {//@dev avoid stack too deep error :XD
+        {
+            //@dev avoid stack too deep error :XD
             TransferHelper.safeApprove(
                 qouterParams.tokenIn,
                 address(qouterParams.uniswap),
