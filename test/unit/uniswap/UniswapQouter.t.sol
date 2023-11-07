@@ -91,10 +91,7 @@ contract UniswapQouterTest is BaseUniswap {
         uint256 balanceBefore = usdt.balanceOf(admin) / 10 ** usdt.decimals();
         console.log("balanceBefore:%o", balanceBefore);
         // Perform a token swap based on the optimal quote
-        console.log(
-            "swapResults:%o",
-            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}()
-        );
+        tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}()
 
         // Get the user's balance of USDT after the swap
         uint256 balanceAfter = usdt.balanceOf(admin) / 10 ** usdt.decimals();
