@@ -22,6 +22,8 @@ import {Events} from "./utils/Events.sol";
 /// @dev Tokens to targe such that we yield the highest possible tokens out
 /// @dev e.g. SWAPPING WETH->BNB->USDT etc for eg such that we get the best outcome
 /// @dev also slippage needs to be considered for all dexes
+///@dev the other way is to get the best qoutes and find the max based on that
+///@dev pick the apporpiate dex and swap
 contract TokenQouter is
     PausableUpgradeable,
     OwnableUpgradeable,
@@ -47,6 +49,7 @@ contract TokenQouter is
      * @dev Swap Ether using a split trade methodalogy
      * @dev The Method gets qoutes from the 3 Dexes and splits the trade based on the best qoute
      * @dev The split is based on the percentage of the best qoute
+     *@dev we split the amountIn amongst the dexes to minimise loss although this is an assumption
      */
     function swapExactETHToTokenOut() public payable whenNotPaused returns () {
         if (msg.value == 0) {
