@@ -11,6 +11,8 @@ import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/Own
 import {IWETH9} from "../src/tokens/IWETH9.sol";
 import {TokenQouter} from "../src/TokenQouter.sol";
 import {Errors} from "../src/utils/Errors.sol";
+import {IUniversalRouter} from "../src/uniswap/IUniversalRouter.sol";
+import {IPermitV2} from "../src/uniswap/IPermitV2.sol";
 import "../src/utils/Enums.sol";
 import "forge-std/Script.sol";
 import "forge-std/console.sol";
@@ -46,6 +48,10 @@ contract TokenQouterScript is Script {
         0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F;
     address public constant CURVE_ADDRESS_PROVIDER_ETH =
         0x0000000022D53366457F9d5E68Ec105046FC4383;
+    address public constant UNIVERSAL_ROUTER_ETH =
+        0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD;
+    address public constant PERMIT_V2_ETH =
+        0x000000000022D473030F116dDEE9F6B43aC78BA3;
     TokenQouter public tokenQouterETHTOUSDT;
     InitParams public qouterParams;
     ERC20 public usdc;
@@ -73,7 +79,9 @@ contract TokenQouterScript is Script {
                 IProvider(CURVE_ADDRESS_PROVIDER_ETH).get_address(2)
             ),
             sushiSwapRouter: IUniswapV2Router01(SUSHI_SWAP_ETH),
-            exchangeProvider: IProvider(CURVE_ADDRESS_PROVIDER_ETH)
+            exchangeProvider: IProvider(CURVE_ADDRESS_PROVIDER_ETH),
+            universalRouter: IUniversalRouter(UNIVERSAL_ROUTER_ETH),
+           permitV2 :IPermitV2(PERMIT_V2_ETH)
         });
         tokenQouterETHTOUSDT = new TokenQouter();
         tokenQouterETHTOUSDT.initialize(qouterParams);

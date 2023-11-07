@@ -38,6 +38,10 @@ abstract contract BaseUniswap is Test {
         0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F;
     address public constant CURVE_ADDRESS_PROVIDER_ETH =
         0x0000000022D53366457F9d5E68Ec105046FC4383;
+    address public constant UNIVERSAL_ROUTER_ETH =
+        0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD;
+    address public constant PERMIT_V2_ETH =
+        0x000000000022D473030F116dDEE9F6B43aC78BA3;
 
     // Ethereum mainnet RPC endpoint
     string public RPC_MAINNET_ETH;
@@ -46,6 +50,7 @@ abstract contract BaseUniswap is Test {
     uint256 defaultUSDCTokenSwap = 10 * 10 ** 6;
     uint256 defaultWETHTokenBalance = 100 ether;
     uint256 defaultUSDTTokenSwap = 10 * 10 ** 6;
+    uint256 public constant BLOCK_NUMBER_ETH = 18518953;
 
     function setUp() public virtual {}
 

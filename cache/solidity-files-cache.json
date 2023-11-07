@@ -859,6 +859,49 @@
         }
       }
     },
+    "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1698849981569,
+      "contentHash": "9f8822b72fe2702979e40160cb6d9636",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC1155Receiver": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC1155Receiver.sol/IERC1155Receiver.json"
+        }
+      }
+    },
     "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
       "lastModificationDate": 1698849981569,
       "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
@@ -988,6 +1031,47 @@
         }
       }
     },
+    "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1698849981569,
+      "contentHash": "c22d4395e33763de693fd440c6fd10e1",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Receiver": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC721Receiver.sol/IERC721Receiver.json"
+        }
+      }
+    },
     "node_modules/@openzeppelin/contracts/utils/Context.sol": {
       "lastModificationDate": 1698849981569,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
@@ -1026,6 +1110,47 @@
       "artifacts": {
         "Context": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Context.sol/Context.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1698849981569,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC165": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC165.sol/IERC165.json"
         }
       }
     },
@@ -1416,8 +1541,8 @@
       }
     },
     "script/TokenQouter.s.sol": {
-      "lastModificationDate": 1698990278917,
-      "contentHash": "fee2663b2587bf901e4b2fa8ba46bd21",
+      "lastModificationDate": 1699314955767,
+      "contentHash": "ef105a58e7bc89925e273db9c1c3be72",
       "sourceName": "script/TokenQouter.s.sol",
       "solcConfig": {
         "settings": {
@@ -1463,10 +1588,13 @@
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "lib/forge-std/src/safeconsole.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
         "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
@@ -1481,6 +1609,9 @@
         "src/curve/ISwap.sol",
         "src/sushi/IUniswapV2Router01.sol",
         "src/tokens/IWETH9.sol",
+        "src/uniswap/IPermitV2.sol",
+        "src/uniswap/IRewardsCollector.sol",
+        "src/uniswap/IUniversalRouter.sol",
         "src/utils/Enums.sol",
         "src/utils/Errors.sol",
         "src/utils/Events.sol",
@@ -1494,8 +1625,8 @@
       }
     },
     "src/TokenQouter.sol": {
-      "lastModificationDate": 1698995882962,
-      "contentHash": "6e43a38366a4fb973fcdd2d0421248d4",
+      "lastModificationDate": 1699358702266,
+      "contentHash": "9bcea516f8f01a4de0a89ace3fbe12d3",
       "sourceName": "src/TokenQouter.sol",
       "solcConfig": {
         "settings": {
@@ -1527,7 +1658,13 @@
         }
       },
       "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
@@ -1541,6 +1678,9 @@
         "src/curve/ISwap.sol",
         "src/sushi/IUniswapV2Router01.sol",
         "src/tokens/IWETH9.sol",
+        "src/uniswap/IPermitV2.sol",
+        "src/uniswap/IRewardsCollector.sol",
+        "src/uniswap/IUniversalRouter.sol",
         "src/utils/Enums.sol",
         "src/utils/Errors.sol",
         "src/utils/Events.sol",
@@ -1717,6 +1857,184 @@
         }
       }
     },
+    "src/uniswap/Commands.sol": {
+      "lastModificationDate": 1699303529481,
+      "contentHash": "51b73dacd617cbf830dfefbbc54e6173",
+      "sourceName": "src/uniswap/Commands.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "Commands": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Commands.sol/Commands.json"
+        }
+      }
+    },
+    "src/uniswap/IPermitV2.sol": {
+      "lastModificationDate": 1699304140363,
+      "contentHash": "5d0ab99d8a99e4e0df8e815dce77ccbc",
+      "sourceName": "src/uniswap/IPermitV2.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "IPermitV2": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IPermitV2.sol/IPermitV2.json"
+        }
+      }
+    },
+    "src/uniswap/IRewardsCollector.sol": {
+      "lastModificationDate": 1699299979743,
+      "contentHash": "268268cd2ce6b0a5923265f9cc597a83",
+      "sourceName": "src/uniswap/IRewardsCollector.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "IRewardsCollector": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IRewardsCollector.sol/IRewardsCollector.json"
+        }
+      }
+    },
+    "src/uniswap/IUniversalRouter.sol": {
+      "lastModificationDate": 1699300012737,
+      "contentHash": "9f9ae74db4136f06f59905ed437e6677",
+      "sourceName": "src/uniswap/IUniversalRouter.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "none",
+            "appendCBOR": false
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "src/uniswap/IRewardsCollector.sol"
+      ],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "IUniversalRouter": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IUniversalRouter.sol/IUniversalRouter.json"
+        }
+      }
+    },
     "src/uniswap/UniswapV3.sol": {
       "lastModificationDate": 1698886460193,
       "contentHash": "e2fa68d7c25ceee19b50347d13c5707e",
@@ -1844,8 +2162,8 @@
       }
     },
     "src/utils/Events.sol": {
-      "lastModificationDate": 1698996081164,
-      "contentHash": "84dffed24fd68d604e2d3183168c30f1",
+      "lastModificationDate": 1699358656319,
+      "contentHash": "21cd8c9018bce3c0aaaadfe812423778",
       "sourceName": "src/utils/Events.sol",
       "solcConfig": {
         "settings": {
@@ -1885,8 +2203,8 @@
       }
     },
     "src/utils/Structs.sol": {
-      "lastModificationDate": 1698906546546,
-      "contentHash": "c624a7663514c5f53afd990b589cef7a",
+      "lastModificationDate": 1699314771307,
+      "contentHash": "6bd4000e1889eaf6ea4dbfa5606e4fb1",
       "sourceName": "src/utils/Structs.sol",
       "solcConfig": {
         "settings": {
@@ -1918,12 +2236,22 @@
         }
       },
       "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
         "node_modules/@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol",
         "node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
         "src/curve/IProvider.sol",
         "src/curve/ISwap.sol",
-        "src/sushi/IUniswapV2Router01.sol"
+        "src/sushi/IUniswapV2Router01.sol",
+        "src/uniswap/IPermitV2.sol",
+        "src/uniswap/IRewardsCollector.sol",
+        "src/uniswap/IUniversalRouter.sol"
       ],
       "versionRequirement": ">=0.8.0",
       "artifacts": {
@@ -1933,8 +2261,8 @@
       }
     },
     "test/base/BaseUniswap.t.sol": {
-      "lastModificationDate": 1698908527550,
-      "contentHash": "6a5b54c8d3babe50c78eb95b92f46808",
+      "lastModificationDate": 1699346563263,
+      "contentHash": "8c2fd5862be7e3b057ab15bf71106d93",
       "sourceName": "test/base/BaseUniswap.t.sol",
       "solcConfig": {
         "settings": {
@@ -1997,8 +2325,8 @@
       }
     },
     "test/unit/uniswap/UniswapQouter.t.sol": {
-      "lastModificationDate": 1698909151686,
-      "contentHash": "6a5129f4df4dee5cbbafbc0f2409157c",
+      "lastModificationDate": 1699358431944,
+      "contentHash": "6eb16aa28333fc69a8a92a702402b0e4",
       "sourceName": "test/unit/uniswap/UniswapQouter.t.sol",
       "solcConfig": {
         "settings": {
@@ -2048,10 +2376,13 @@
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "lib/forge-std/src/safeconsole.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
         "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
         "node_modules/@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
@@ -2066,6 +2397,9 @@
         "src/curve/ISwap.sol",
         "src/sushi/IUniswapV2Router01.sol",
         "src/tokens/IWETH9.sol",
+        "src/uniswap/IPermitV2.sol",
+        "src/uniswap/IRewardsCollector.sol",
+        "src/uniswap/IUniversalRouter.sol",
         "src/uniswap/UniswapV3.sol",
         "src/utils/Enums.sol",
         "src/utils/Errors.sol",

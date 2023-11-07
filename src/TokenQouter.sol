@@ -14,7 +14,10 @@ import {Errors} from "./utils/Errors.sol";
 import "./utils/Enums.sol";
 import {Events} from "./utils/Events.sol";
 
-// Define the TokenQouter contract.
+/// @title TokenQouter
+/// @author brianspha
+/// @notice Contract that allows users to swap tokens
+/// @dev DO NOT USE IN PRODUCTION
 contract TokenQouter is
     PausableUpgradeable,
     OwnableUpgradeable,
@@ -23,6 +26,8 @@ contract TokenQouter is
 {
     // Store initialization parameters in a public variable.
     InitParams public qouterParams;
+    // Precision factor
+    uint256 private constant PRECISION = 1 ether;
 
     /**
      * @dev Initialize the contract with the given parameters.
@@ -35,24 +40,35 @@ contract TokenQouter is
     }
 
     /**
-     * @dev Swap Ether for a specified token using a selected protocol.
-     * @param swapConfig The selected protocol (UNISWAPV3, CURVE, or another).
-     * @return amountOut
+     * @dev Swap Ether using a split trade methodalogy
+     * @dev The Method gets qoutes from the 3 Dexes and splits the trade based on the best qoute
+     * @dev The split is based on the percentage of the best qoute
      */
-    function swapExactETHToTokenOut(
-        PROTOCOL swapConfig
-    ) external payable whenNotPaused returns (uint256 amountOut) {
+    function swapExactETHToTokenOut() public payable whenNotPaused returns () {
         if (msg.value == 0) {
             revert InvalidAmount();
         }
+        uint256 amountOut;
         uint256 amountIn = msg.value;
         IWETH9(qouterParams.tokenIn).deposit{value: amountIn}();
+        uint256[] memory qoutes;
+        address optimalPool;
 
-        if (swapConfig == PROTOCOL.UNISWAPV3) {
+        (qoutes, optimalPool) = getQouteTokenInToTokenOut(
+            amountIn,
+            qouterParams.poolFee
+        );
+
+        uint256[] memory split = calculatePercentageSplit(qoutes);
+        uint256 idealQoute = _findMax(qoutes);
+        uint256 sushiAmountIn = getAmount(amountIn, split[0], amountIn);
+        uint256 curveAmountIn = getAmount(amountIn, split[1], amountIn);
+        uint256 uniswapAmountIn = getAmount(amountIn, split[2], amountIn);
+        {
             TransferHelper.safeApprove(
                 qouterParams.tokenIn,
                 address(qouterParams.uniswap),
-                amountIn
+                uniswapAmountIn
             );
             //@dev swap selected is UniswapV3
             ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
@@ -62,32 +78,32 @@ contract TokenQouter is
                     fee: qouterParams.poolFee,
                     recipient: _msgSender(),
                     deadline: block.timestamp + 1 minutes,
-                    amountIn: amountIn,
-                    amountOutMinimum: 0,
+                    amountIn: uniswapAmountIn,
+                    amountOutMinimum: 1, //@dev this is not ideal buuut for testing purpose we set this to 1
                     sqrtPriceLimitX96: 0
                 });
             // The call to `exactInputSingle` executes the swap.
-            amountOut = qouterParams.uniswap.exactInputSingle(params);
-        } else if (swapConfig == PROTOCOL.CURVE) {
+            uint256 amountOutUniswap = qouterParams.uniswap.exactInputSingle(
+                params
+            );
             TransferHelper.safeApprove(
                 qouterParams.tokenIn,
                 address(qouterParams.curveSwap),
-                amountIn
+                curveAmountIn
             );
             //@dev curve finance selected
-            amountOut = qouterParams.curveSwap.exchange(
-                qouterParams.tokenOutPool,
+            uint256 amountOutCurve = qouterParams.curveSwap.exchange(
+                optimalPool,
                 qouterParams.tokenIn,
                 qouterParams.tokenOut,
-                amountIn,
+                curveAmountIn,
                 1,
                 _msgSender()
             );
-        } else {
             TransferHelper.safeApprove(
                 qouterParams.tokenIn,
                 address(qouterParams.sushiSwapRouter),
-                amountIn
+                sushiAmountIn
             );
             address[] memory path = new address[](2);
             path[0] = qouterParams.tokenIn;
@@ -96,19 +112,18 @@ contract TokenQouter is
             uint[] memory amounts = qouterParams
                 .sushiSwapRouter
                 .swapExactTokensForTokens(
-                    amountIn,
+                    sushiAmountIn,
                     1,
                     path,
                     _msgSender(),
                     block.timestamp + 1 minutes
                 );
-            if (amounts.length == 0) {
-                revert InvalidAmounts();
-            }
-            amountOut = amounts[0];
+            uint256 amountOutSushi = amounts[0];
+            amountOut = (amountOutCurve + amountOutUniswap + amountOutSushi);
+            emit Swap(qouterParams.tokenIn, qouterParams.tokenOut, amountOut);
         }
-        if (amountOut <= 0) {
-            revert InvalidAmountOut();
+        if (amountOut < idealQoute) {
+            revert InvalidAmounts();
         }
     }
 
@@ -121,16 +136,12 @@ contract TokenQouter is
     function getQouteTokenInToTokenOut(
         uint256 amount,
         uint24 poolFee
-    ) external returns (uint256[] memory, address) {
-        address tokenIn = qouterParams.tokenOut;
-        address tokenOut = qouterParams.tokenIn;
-        uint24 fee = poolFee;
+    ) public returns (uint256[] memory, address) {
         uint160 sqrtPriceLimitX96 = 0;
-
         uint256 quoteUNISWAP = qouterParams.uniswapQuoter.quoteExactInputSingle(
-            tokenIn,
-            tokenOut,
-            fee,
+            qouterParams.tokenIn,
+            qouterParams.tokenOut,
+            poolFee,
             amount,
             sqrtPriceLimitX96
         );
@@ -141,7 +152,7 @@ contract TokenQouter is
             qouterParams.tokenOut,
             amount
         );
-        address[] memory path = new address[](2);
+        address[] memory path = address[](2);
         path[0] = qouterParams.tokenIn;
         path[1] = qouterParams.tokenOut;
         uint256[] memory amounts = qouterParams.sushiSwapRouter.getAmountsOut(
@@ -169,5 +180,52 @@ contract TokenQouter is
      */
     function unpause() external onlyOwner {
         _unpause();
+    }
+
+    /**
+     * @dev Find the maximum value in an array of numbers.
+     * @param numbers The array of numbers to find the maximum from.
+     * @return The maximum value in the array.
+     */
+    function _findMax(uint[] memory numbers) internal pure returns (uint) {
+        require(numbers.length > 0, "Array must not be empty");
+        uint max = numbers[0];
+        uint i = 1;
+        uint length = numbers.length;
+        for (; i < length; ) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+            unchecked {
+                i++;
+            }
+        }
+
+        return max;
+    }
+
+    function calculatePercentageSplit(
+        uint256[] memory numbers
+    ) public pure returns (uint256[] memory) {
+        uint256 total = 0;
+        uint256[] memory percentages = new uint256[](numbers.length);
+
+        for (uint256 i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+        }
+
+        for (uint256 i = 0; i < numbers.length; i++) {
+            percentages[i] = (numbers[i] * PRECISION) / total;
+        }
+
+        return percentages;
+    }
+
+    function getAmount(
+        uint256 amount,
+        uint256 percent,
+        uint256 total
+    ) public pure returns (uint256) {
+        return (amount * percent * PRECISION) / (total * PRECISION);
     }
 }

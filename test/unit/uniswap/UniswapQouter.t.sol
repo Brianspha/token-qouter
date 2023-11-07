@@ -7,6 +7,9 @@ import "forge-std/console.sol";
 import {ISwap} from "../../../src/curve/ISwap.sol";
 import {IProvider} from "../../../src/curve/IProvider.sol";
 import {UniswapV3} from "../../../src/uniswap/UniswapV3.sol";
+import {IUniversalRouter} from "../../../src/uniswap/IUniversalRouter.sol";
+import {IPermitV2} from "../../../src/uniswap/IPermitV2.sol";
+
 import {TokenQouter} from "../../../src/TokenQouter.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {ISwapRouter} from "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
@@ -30,7 +33,10 @@ contract UniswapQouterTest is BaseUniswap {
     function setUp() public override {
         RPC_MAINNET_ETH = vm.envString("RPC_ENDPOINT_ETH_MAINNET");
         // Set the Ethereum mainnet fork
-        ETH_CHAIN_ID_MAINNET = vm.createFork(RPC_MAINNET_ETH);
+        ETH_CHAIN_ID_MAINNET = vm.createSelectFork(
+            RPC_MAINNET_ETH,
+            BLOCK_NUMBER_ETH
+        );
         vm.selectFork(ETH_CHAIN_ID_MAINNET);
 
         // Initialize ERC20 tokens and user accounts
@@ -67,76 +73,32 @@ contract UniswapQouterTest is BaseUniswap {
                 IProvider(CURVE_ADDRESS_PROVIDER_ETH).get_address(2)
             ),
             sushiSwapRouter: IUniswapV2Router01(SUSHI_SWAP_ETH),
-            exchangeProvider: IProvider(CURVE_ADDRESS_PROVIDER_ETH)
+            exchangeProvider: IProvider(CURVE_ADDRESS_PROVIDER_ETH),
+            universalRouter: IUniversalRouter(UNIVERSAL_ROUTER_ETH),
+            permitV2: IPermitV2(PERMIT_V2_ETH)
         });
         tokenQouterETHTOUSDT = new TokenQouter();
         tokenQouterETHTOUSDT.initialize(qouterParams);
         vm.stopPrank();
     }
 
-    // Function to test getting a quote for a token swap on SushiSwap
-    function test_getQouteTokenInToTokenOut_SUSHI() public {
+    // Function to test getting the optimal quote for a token swap
+    function test_getQouteTokenInToTokenOut_Optimal() public {
         vm.selectFork(ETH_CHAIN_ID_MAINNET);
         vm.startPrank(admin);
 
         // Get the user's balance of USDT before the swap
         uint256 balanceBefore = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Perform a token swap and get a quote
+        console.log("balanceBefore:%o", balanceBefore);
+        // Perform a token swap based on the optimal quote
         console.log(
-            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}(
-                PROTOCOL.SUSHISWAP
-            ) / 1 ether
+            "swapResults:%o",
+            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}()
         );
 
         // Get the user's balance of USDT after the swap
         uint256 balanceAfter = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Ensure the user's balance increased after the swap
-        assert(balanceAfter > balanceBefore);
-        vm.stopPrank();
-    }
-
-    // Function to test getting a quote for a token swap on Curve
-    function test_getQouteTokenInToTokenOut_Curve() public {
-        vm.selectFork(ETH_CHAIN_ID_MAINNET);
-        vm.startPrank(admin);
-
-        // Get the user's balance of USDT before the swap
-        uint256 balanceBefore = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Perform a token swap and get a quote
-        console.log(
-            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}(
-                PROTOCOL.CURVE
-            ) / 1 ether
-        );
-
-        // Get the user's balance of USDT after the swap
-        uint256 balanceAfter = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Ensure the user's balance increased after the swap
-        assert(balanceAfter > balanceBefore);
-        vm.stopPrank();
-    }
-
-    // Function to test getting a quote for a token swap on Uniswap
-    function test_getQouteTokenInToTokenOut_Uniswap() public {
-        vm.selectFork(ETH_CHAIN_ID_MAINNET);
-        vm.startPrank(admin);
-
-        // Get the user's balance of USDT before the swap
-        uint256 balanceBefore = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Perform a token swap and get a quote
-        console.log(
-            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}(
-                PROTOCOL.UNISWAPV3
-            ) / 1 ether
-        );
-
-        // Get the user's balance of USDT after the swap
-        uint256 balanceAfter = usdt.balanceOf(admin) / 10 ** usdt.decimals();
+        console.log("balanceAfter:%o", balanceAfter);
 
         // Ensure the user's balance increased after the swap
         assert(balanceAfter > balanceBefore);
@@ -164,42 +126,6 @@ contract UniswapQouterTest is BaseUniswap {
         // Ensure quotes were obtained and ideal quote is greater than 0
         assert(qoutes.length > 0 && idealQoute > 0);
 
-        vm.stopPrank();
-    }
-
-    // Function to test getting the optimal quote for a token swap
-    function test_getQouteTokenInToTokenOut_Optimal() public {
-        vm.selectFork(ETH_CHAIN_ID_MAINNET);
-        vm.startPrank(admin);
-
-        // Get the user's balance of USDT before the swap
-        uint256 balanceBefore = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-        uint256[] memory qoutes;
-        address optimalPool;
-
-        // Get quotes for a token swap
-        (qoutes, optimalPool) = tokenQouterETHTOUSDT.getQouteTokenInToTokenOut(
-            1 ether,
-            3000
-        );
-        uint256 idealQoute = _findMax(qoutes);
-
-        // Perform a token swap based on the optimal quote
-        console.log(
-            tokenQouterETHTOUSDT.swapExactETHToTokenOut{value: 1 ether}(
-                idealQoute == qoutes[0]
-                    ? PROTOCOL.UNISWAPV3
-                    : idealQoute == qoutes[1]
-                    ? PROTOCOL.CURVE
-                    : PROTOCOL.SUSHISWAP
-            ) / 1 ether
-        );
-
-        // Get the user's balance of USDT after the swap
-        uint256 balanceAfter = usdt.balanceOf(admin) / 10 ** usdt.decimals();
-
-        // Ensure the user's balance increased after the swap
-        assert(balanceAfter > balanceBefore);
         vm.stopPrank();
     }
 }

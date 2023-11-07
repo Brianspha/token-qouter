@@ -5,8 +5,10 @@ import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
 import "@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol";
 import {ISwap} from "../curve/ISwap.sol";
 import {IProvider} from "../curve/IProvider.sol";
-
+import  {IUniversalRouter} from "../uniswap/IUniversalRouter.sol";
 import {IUniswapV2Router01} from "../sushi/IUniswapV2Router01.sol";
+import  {IPermitV2} from "../uniswap/IPermitV2.sol";
+
 
 // Define a struct to hold initialization parameters.
 struct InitParams {
@@ -21,4 +23,6 @@ struct InitParams {
     ISwap curveSwap;            // Curve swap.
     IUniswapV2Router01 sushiSwapRouter;   // SushiSwap router.
     IProvider exchangeProvider; // Exchange provider.
+    IUniversalRouter universalRouter; // Universal router on uniswap
+    IPermitV2 permitV2; // Permit V2 on uniswap
 }

@@ -10,37 +10,43 @@
   },
   "ast": {
     "absolutePath": "src/utils/Structs.sol",
-    "id": 46098,
+    "id": 46541,
     "exportedSymbols": {
+      "IPermitV2": [
+        46405
+      ],
       "IProvider": [
-        45626
+        45958
       ],
       "IQuoter": [
-        44931
+        45041
       ],
       "ISwap": [
-        45676
+        46008
       ],
       "ISwapRouter": [
-        45031
+        45141
       ],
       "IUniswapV2Router01": [
-        45984
+        46316
       ],
       "IUniswapV3SwapCallback": [
-        44874
+        44984
+      ],
+      "IUniversalRouter": [
+        46459
       ],
       "InitParams": [
-        46097
+        46540
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:1034:39",
+    "src": "32:1271:48",
     "nodes": [
       {
-        "id": 46061,
+        "id": 46494,
         "nodeType": "PragmaDirective",
-        "src": "32:24:39",
+        "src": "32:24:48",
         "nodes": [],
         "literals": [
           "solidity",
@@ -50,50 +56,50 @@
         ]
       },
       {
-        "id": 46062,
+        "id": 46495,
         "nodeType": "ImportDirective",
-        "src": "58:68:39",
+        "src": "58:68:48",
         "nodes": [],
         "absolutePath": "node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
         "file": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 46098,
-        "sourceUnit": 45032,
+        "scope": 46541,
+        "sourceUnit": 45142,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 46063,
+        "id": 46496,
         "nodeType": "ImportDirective",
-        "src": "127:64:39",
+        "src": "127:64:48",
         "nodes": [],
         "absolutePath": "node_modules/@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol",
         "file": "@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 46098,
-        "sourceUnit": 44932,
+        "scope": 46541,
+        "sourceUnit": 45042,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 46065,
+        "id": 46498,
         "nodeType": "ImportDirective",
-        "src": "192:41:39",
+        "src": "192:41:48",
         "nodes": [],
         "absolutePath": "src/curve/ISwap.sol",
         "file": "../curve/ISwap.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 46098,
-        "sourceUnit": 45677,
+        "scope": 46541,
+        "sourceUnit": 46009,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 46064,
+              "id": 46497,
               "name": "ISwap",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 45676,
-              "src": "200:5:39",
+              "referencedDeclaration": 46008,
+              "src": "200:5:48",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -102,24 +108,24 @@
         "unitAlias": ""
       },
       {
-        "id": 46067,
+        "id": 46500,
         "nodeType": "ImportDirective",
-        "src": "234:49:39",
+        "src": "234:49:48",
         "nodes": [],
         "absolutePath": "src/curve/IProvider.sol",
         "file": "../curve/IProvider.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 46098,
-        "sourceUnit": 45627,
+        "scope": 46541,
+        "sourceUnit": 45959,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 46066,
+              "id": 46499,
               "name": "IProvider",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 45626,
-              "src": "242:9:39",
+              "referencedDeclaration": 45958,
+              "src": "242:9:48",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -128,24 +134,50 @@
         "unitAlias": ""
       },
       {
-        "id": 46069,
+        "id": 46502,
         "nodeType": "ImportDirective",
-        "src": "285:67:39",
+        "src": "284:66:48",
+        "nodes": [],
+        "absolutePath": "src/uniswap/IUniversalRouter.sol",
+        "file": "../uniswap/IUniversalRouter.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46541,
+        "sourceUnit": 46460,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46501,
+              "name": "IUniversalRouter",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 46459,
+              "src": "293:16:48",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46504,
+        "nodeType": "ImportDirective",
+        "src": "351:67:48",
         "nodes": [],
         "absolutePath": "src/sushi/IUniswapV2Router01.sol",
         "file": "../sushi/IUniswapV2Router01.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 46098,
-        "sourceUnit": 45985,
+        "scope": 46541,
+        "sourceUnit": 46317,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 46068,
+              "id": 46503,
               "name": "IUniswapV2Router01",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 45984,
-              "src": "293:18:39",
+              "referencedDeclaration": 46316,
+              "src": "359:18:48",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -154,21 +186,47 @@
         "unitAlias": ""
       },
       {
-        "id": 46097,
+        "id": 46506,
+        "nodeType": "ImportDirective",
+        "src": "419:52:48",
+        "nodes": [],
+        "absolutePath": "src/uniswap/IPermitV2.sol",
+        "file": "../uniswap/IPermitV2.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46541,
+        "sourceUnit": 46406,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46505,
+              "name": "IPermitV2",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 46405,
+              "src": "428:9:48",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46540,
         "nodeType": "StructDefinition",
-        "src": "408:657:39",
+        "src": "528:774:48",
         "nodes": [],
         "canonicalName": "InitParams",
         "members": [
           {
             "constant": false,
-            "id": 46071,
+            "id": 46508,
             "mutability": "mutable",
             "name": "tokenIn",
-            "nameLocation": "440:7:39",
+            "nameLocation": "560:7:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "432:15:39",
+            "scope": 46540,
+            "src": "552:15:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -176,10 +234,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 46070,
+              "id": 46507,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "432:7:39",
+              "src": "552:7:48",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -190,13 +248,13 @@
           },
           {
             "constant": false,
-            "id": 46073,
+            "id": 46510,
             "mutability": "mutable",
             "name": "tokenOut",
-            "nameLocation": "503:8:39",
+            "nameLocation": "623:8:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "495:16:39",
+            "scope": 46540,
+            "src": "615:16:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -204,10 +262,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 46072,
+              "id": 46509,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "495:7:39",
+              "src": "615:7:48",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -218,13 +276,13 @@
           },
           {
             "constant": false,
-            "id": 46075,
+            "id": 46512,
             "mutability": "mutable",
             "name": "qouter",
-            "nameLocation": "567:6:39",
+            "nameLocation": "687:6:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "559:14:39",
+            "scope": 46540,
+            "src": "679:14:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -232,10 +290,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 46074,
+              "id": 46511,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "559:7:39",
+              "src": "679:7:48",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -246,13 +304,13 @@
           },
           {
             "constant": false,
-            "id": 46077,
+            "id": 46514,
             "mutability": "mutable",
             "name": "tokenInPool",
-            "nameLocation": "625:11:39",
+            "nameLocation": "745:11:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "617:19:39",
+            "scope": 46540,
+            "src": "737:19:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -260,10 +318,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 46076,
+              "id": 46513,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "617:7:39",
+              "src": "737:7:48",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -274,13 +332,13 @@
           },
           {
             "constant": false,
-            "id": 46079,
+            "id": 46516,
             "mutability": "mutable",
             "name": "tokenOutPool",
-            "nameLocation": "695:12:39",
+            "nameLocation": "815:12:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "687:20:39",
+            "scope": 46540,
+            "src": "807:20:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -288,10 +346,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 46078,
+              "id": 46515,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "687:7:39",
+              "src": "807:7:48",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -302,13 +360,13 @@
           },
           {
             "constant": false,
-            "id": 46081,
+            "id": 46518,
             "mutability": "mutable",
             "name": "poolFee",
-            "nameLocation": "765:7:39",
+            "nameLocation": "885:7:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "758:14:39",
+            "scope": 46540,
+            "src": "878:14:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -316,10 +374,10 @@
               "typeString": "uint24"
             },
             "typeName": {
-              "id": 46080,
+              "id": 46517,
               "name": "uint24",
               "nodeType": "ElementaryTypeName",
-              "src": "758:6:39",
+              "src": "878:6:48",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint24",
                 "typeString": "uint24"
@@ -329,36 +387,36 @@
           },
           {
             "constant": false,
-            "id": 46084,
+            "id": 46521,
             "mutability": "mutable",
             "name": "uniswap",
-            "nameLocation": "815:7:39",
+            "nameLocation": "935:7:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "803:19:39",
+            "scope": 46540,
+            "src": "923:19:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ISwapRouter_$45031",
+              "typeIdentifier": "t_contract$_ISwapRouter_$45141",
               "typeString": "contract ISwapRouter"
             },
             "typeName": {
-              "id": 46083,
+              "id": 46520,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 46082,
+                "id": 46519,
                 "name": "ISwapRouter",
                 "nameLocations": [
-                  "803:11:39"
+                  "923:11:48"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 45031,
-                "src": "803:11:39"
+                "referencedDeclaration": 45141,
+                "src": "923:11:48"
               },
-              "referencedDeclaration": 45031,
-              "src": "803:11:39",
+              "referencedDeclaration": 45141,
+              "src": "923:11:48",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ISwapRouter_$45031",
+                "typeIdentifier": "t_contract$_ISwapRouter_$45141",
                 "typeString": "contract ISwapRouter"
               }
             },
@@ -366,36 +424,36 @@
           },
           {
             "constant": false,
-            "id": 46087,
+            "id": 46524,
             "mutability": "mutable",
             "name": "uniswapQuoter",
-            "nameLocation": "862:13:39",
+            "nameLocation": "982:13:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "854:21:39",
+            "scope": 46540,
+            "src": "974:21:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IQuoter_$44931",
+              "typeIdentifier": "t_contract$_IQuoter_$45041",
               "typeString": "contract IQuoter"
             },
             "typeName": {
-              "id": 46086,
+              "id": 46523,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 46085,
+                "id": 46522,
                 "name": "IQuoter",
                 "nameLocations": [
-                  "854:7:39"
+                  "974:7:48"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 44931,
-                "src": "854:7:39"
+                "referencedDeclaration": 45041,
+                "src": "974:7:48"
               },
-              "referencedDeclaration": 44931,
-              "src": "854:7:39",
+              "referencedDeclaration": 45041,
+              "src": "974:7:48",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IQuoter_$44931",
+                "typeIdentifier": "t_contract$_IQuoter_$45041",
                 "typeString": "contract IQuoter"
               }
             },
@@ -403,36 +461,36 @@
           },
           {
             "constant": false,
-            "id": 46090,
+            "id": 46527,
             "mutability": "mutable",
             "name": "curveSwap",
-            "nameLocation": "910:9:39",
+            "nameLocation": "1030:9:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "904:15:39",
+            "scope": 46540,
+            "src": "1024:15:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ISwap_$45676",
+              "typeIdentifier": "t_contract$_ISwap_$46008",
               "typeString": "contract ISwap"
             },
             "typeName": {
-              "id": 46089,
+              "id": 46526,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 46088,
+                "id": 46525,
                 "name": "ISwap",
                 "nameLocations": [
-                  "904:5:39"
+                  "1024:5:48"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 45676,
-                "src": "904:5:39"
+                "referencedDeclaration": 46008,
+                "src": "1024:5:48"
               },
-              "referencedDeclaration": 45676,
-              "src": "904:5:39",
+              "referencedDeclaration": 46008,
+              "src": "1024:5:48",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ISwap_$45676",
+                "typeIdentifier": "t_contract$_ISwap_$46008",
                 "typeString": "contract ISwap"
               }
             },
@@ -440,36 +498,36 @@
           },
           {
             "constant": false,
-            "id": 46093,
+            "id": 46530,
             "mutability": "mutable",
             "name": "sushiSwapRouter",
-            "nameLocation": "970:15:39",
+            "nameLocation": "1090:15:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "951:34:39",
+            "scope": 46540,
+            "src": "1071:34:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IUniswapV2Router01_$45984",
+              "typeIdentifier": "t_contract$_IUniswapV2Router01_$46316",
               "typeString": "contract IUniswapV2Router01"
             },
             "typeName": {
-              "id": 46092,
+              "id": 46529,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 46091,
+                "id": 46528,
                 "name": "IUniswapV2Router01",
                 "nameLocations": [
-                  "951:18:39"
+                  "1071:18:48"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 45984,
-                "src": "951:18:39"
+                "referencedDeclaration": 46316,
+                "src": "1071:18:48"
               },
-              "referencedDeclaration": 45984,
-              "src": "951:18:39",
+              "referencedDeclaration": 46316,
+              "src": "1071:18:48",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IUniswapV2Router01_$45984",
+                "typeIdentifier": "t_contract$_IUniswapV2Router01_$46316",
                 "typeString": "contract IUniswapV2Router01"
               }
             },
@@ -477,49 +535,123 @@
           },
           {
             "constant": false,
-            "id": 46096,
+            "id": 46533,
             "mutability": "mutable",
             "name": "exchangeProvider",
-            "nameLocation": "1024:16:39",
+            "nameLocation": "1144:16:48",
             "nodeType": "VariableDeclaration",
-            "scope": 46097,
-            "src": "1014:26:39",
+            "scope": 46540,
+            "src": "1134:26:48",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IProvider_$45626",
+              "typeIdentifier": "t_contract$_IProvider_$45958",
               "typeString": "contract IProvider"
             },
             "typeName": {
-              "id": 46095,
+              "id": 46532,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 46094,
+                "id": 46531,
                 "name": "IProvider",
                 "nameLocations": [
-                  "1014:9:39"
+                  "1134:9:48"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 45626,
-                "src": "1014:9:39"
+                "referencedDeclaration": 45958,
+                "src": "1134:9:48"
               },
-              "referencedDeclaration": 45626,
-              "src": "1014:9:39",
+              "referencedDeclaration": 45958,
+              "src": "1134:9:48",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IProvider_$45626",
+                "typeIdentifier": "t_contract$_IProvider_$45958",
                 "typeString": "contract IProvider"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46536,
+            "mutability": "mutable",
+            "name": "universalRouter",
+            "nameLocation": "1205:15:48",
+            "nodeType": "VariableDeclaration",
+            "scope": 46540,
+            "src": "1188:32:48",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IUniversalRouter_$46459",
+              "typeString": "contract IUniversalRouter"
+            },
+            "typeName": {
+              "id": 46535,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46534,
+                "name": "IUniversalRouter",
+                "nameLocations": [
+                  "1188:16:48"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 46459,
+                "src": "1188:16:48"
+              },
+              "referencedDeclaration": 46459,
+              "src": "1188:16:48",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IUniversalRouter_$46459",
+                "typeString": "contract IUniversalRouter"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 46539,
+            "mutability": "mutable",
+            "name": "permitV2",
+            "nameLocation": "1267:8:48",
+            "nodeType": "VariableDeclaration",
+            "scope": 46540,
+            "src": "1257:18:48",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IPermitV2_$46405",
+              "typeString": "contract IPermitV2"
+            },
+            "typeName": {
+              "id": 46538,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 46537,
+                "name": "IPermitV2",
+                "nameLocations": [
+                  "1257:9:48"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 46405,
+                "src": "1257:9:48"
+              },
+              "referencedDeclaration": 46405,
+              "src": "1257:9:48",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IPermitV2_$46405",
+                "typeString": "contract IPermitV2"
               }
             },
             "visibility": "internal"
           }
         ],
         "name": "InitParams",
-        "nameLocation": "415:10:39",
-        "scope": 46098,
+        "nameLocation": "535:10:48",
+        "scope": 46541,
         "visibility": "public"
       }
     ],
     "license": "MIT"
   },
-  "id": 39
+  "id": 48
 }

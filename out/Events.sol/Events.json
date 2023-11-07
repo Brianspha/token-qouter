@@ -18,20 +18,45 @@
       ],
       "name": "BestQoute",
       "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "tokenIn",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "tokenOut",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "Swap",
+      "type": "event"
     }
   ],
   "bytecode": {
     "object": "0x6080604052348015600f57600080fd5b50600980601d6000396000f3fe6080604052600080fd",
-    "sourceMap": "71:95:41:-:0;;;;;;;;;;;;;;;;;;;",
+    "sourceMap": "65:220:47:-:0;;;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
     "object": "0x6080604052600080fd",
-    "sourceMap": "71:95:41:-:0;;;;;",
+    "sourceMap": "65:220:47:-:0;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"qoutes\",\"type\":\"uint256[]\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddress\",\"type\":\"address\"}],\"name\":\"BestQoute\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Events.sol\":\"Events\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Events.sol\":{\"keccak256\":\"0xf9dd8c586ad4262333caaa9001b8f0edf553c3863b458465bcf3634421c9eb98\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6a7917cce140eab5e5aea612b03af657a5b21ce522cb45f4a3f96ec16a9600d7\",\"dweb:/ipfs/QmNQ1hWmVvHt5CbwWHsmssCrsUmb7sAas9kaziyCvJ8acQ\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"qoutes\",\"type\":\"uint256[]\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddress\",\"type\":\"address\"}],\"name\":\"BestQoute\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"tokenIn\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"tokenOut\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"Swap\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Events.sol\":\"Events\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Events.sol\":{\"keccak256\":\"0x3a5105a37b4ab420cd8c3517a68f98ebf4b20f305a657b907483f902ea9696f6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c08e8373fec4c59a8084f556e43941de5b86b4830dde5da0ade67a0e74b54126\",\"dweb:/ipfs/QmNRprJGZFR8k29LYkMuEb15QGZM7K7z6a2eUKUzU5kp46\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.20+commit.a1b79de6"
@@ -56,6 +81,31 @@
           ],
           "type": "event",
           "name": "BestQoute",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "Swap",
           "anonymous": false
         }
       ],
@@ -95,10 +145,10 @@
     },
     "sources": {
       "src/utils/Events.sol": {
-        "keccak256": "0xf9dd8c586ad4262333caaa9001b8f0edf553c3863b458465bcf3634421c9eb98",
+        "keccak256": "0x3a5105a37b4ab420cd8c3517a68f98ebf4b20f305a657b907483f902ea9696f6",
         "urls": [
-          "bzz-raw://6a7917cce140eab5e5aea612b03af657a5b21ce522cb45f4a3f96ec16a9600d7",
-          "dweb:/ipfs/QmNQ1hWmVvHt5CbwWHsmssCrsUmb7sAas9kaziyCvJ8acQ"
+          "bzz-raw://c08e8373fec4c59a8084f556e43941de5b86b4830dde5da0ade67a0e74b54126",
+          "dweb:/ipfs/QmNRprJGZFR8k29LYkMuEb15QGZM7K7z6a2eUKUzU5kp46"
         ],
         "license": "UNLICENSED"
       }
@@ -107,19 +157,19 @@
   },
   "ast": {
     "absolutePath": "src/utils/Events.sol",
-    "id": 46309,
+    "id": 46696,
     "exportedSymbols": {
       "Events": [
-        46308
+        46695
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "43:124:41",
+    "src": "39:247:47",
     "nodes": [
       {
-        "id": 46300,
+        "id": 46679,
         "nodeType": "PragmaDirective",
-        "src": "43:24:41",
+        "src": "39:24:47",
         "nodes": [],
         "literals": [
           "solidity",
@@ -129,33 +179,33 @@
         ]
       },
       {
-        "id": 46308,
+        "id": 46695,
         "nodeType": "ContractDefinition",
-        "src": "71:95:41",
+        "src": "65:220:47",
         "nodes": [
           {
-            "id": 46307,
+            "id": 46686,
             "nodeType": "EventDefinition",
-            "src": "93:71:41",
+            "src": "87:71:47",
             "nodes": [],
             "anonymous": false,
             "eventSelector": "e9cda41294389ae04d7c338828fa3884d5ff08cf3e0f8135b1a3bb98255dcc8f",
             "name": "BestQoute",
-            "nameLocation": "99:9:41",
+            "nameLocation": "93:9:47",
             "parameters": {
-              "id": 46306,
+              "id": 46685,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 46303,
+                  "id": 46682,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "qoutes",
-                  "nameLocation": "128:6:41",
+                  "nameLocation": "121:6:47",
                   "nodeType": "VariableDeclaration",
-                  "scope": 46307,
-                  "src": "109:25:41",
+                  "scope": 46686,
+                  "src": "103:24:47",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -164,18 +214,18 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 46301,
+                      "id": 46680,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "109:7:41",
+                      "src": "103:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 46302,
+                    "id": 46681,
                     "nodeType": "ArrayTypeName",
-                    "src": "109:9:41",
+                    "src": "103:9:47",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -185,14 +235,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 46305,
+                  "id": 46684,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "poolAddress",
-                  "nameLocation": "151:11:41",
+                  "nameLocation": "145:11:47",
                   "nodeType": "VariableDeclaration",
-                  "scope": 46307,
-                  "src": "135:27:41",
+                  "scope": 46686,
+                  "src": "129:27:47",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -200,10 +250,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 46304,
+                    "id": 46683,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "135:7:41",
+                    "src": "129:7:47",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -213,7 +263,110 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "108:55:41"
+              "src": "102:55:47"
+            }
+          },
+          {
+            "id": 46694,
+            "nodeType": "EventDefinition",
+            "src": "164:119:47",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "ea368a40e9570069bb8e6511d668293ad2e1f03b0d982431fd223de9f3b70ca6",
+            "name": "Swap",
+            "nameLocation": "170:4:47",
+            "parameters": {
+              "id": 46693,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46688,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenIn",
+                  "nameLocation": "200:7:47",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46694,
+                  "src": "184:23:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 46687,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:7:47",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46690,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenOut",
+                  "nameLocation": "233:8:47",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46694,
+                  "src": "217:24:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 46689,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:7:47",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46692,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "267:9:47",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46694,
+                  "src": "251:25:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 46691,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "251:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "174:108:47"
             }
           }
         ],
@@ -224,18 +377,19 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          46308
+          46695
         ],
         "name": "Events",
-        "nameLocation": "80:6:41",
-        "scope": 46309,
+        "nameLocation": "74:6:47",
+        "scope": 46696,
         "usedErrors": [],
         "usedEvents": [
-          46307
+          46686,
+          46694
         ]
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 41
+  "id": 47
 }
