@@ -64,7 +64,7 @@ contract TokenQouter is
         uint256 sushiAmountIn = getAmount(amountIn, split[0], amountIn);
         uint256 curveAmountIn = getAmount(amountIn, split[1], amountIn);
         uint256 uniswapAmountIn = getAmount(amountIn, split[2], amountIn);
-        {
+        {//@dev avoid stack too deep error :XD
             TransferHelper.safeApprove(
                 qouterParams.tokenIn,
                 address(qouterParams.uniswap),
