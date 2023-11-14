@@ -55,7 +55,6 @@ contract TokenQouter is
         if (msg.value == 0) {
             revert InvalidAmount();
         }
-        address sender = _msgSender();
         IWETH9(qouterParams.tokenIn).deposit{value: msg.value}();
         uint256[] memory qoutes;
         address optimalPool;
@@ -81,7 +80,7 @@ contract TokenQouter is
                 tokenIn: qouterParams.tokenIn,
                 tokenOut: qouterParams.tokenOut,
                 fee: qouterParams.poolFee,
-                recipient: sender,
+                recipient: _msgSender(),
                 deadline: block.timestamp + 1 minutes,
                 amountIn: uniswapAmountIn,
                 amountOutMinimum: 1, //@dev this is not ideal buuut for testing purpose we set this to 1
