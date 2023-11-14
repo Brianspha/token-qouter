@@ -13,7 +13,7 @@ out = "out"
 solc = "0.8.20"
 src = "src"
 test = "test"
-
+gas_reports = ["*"]
 [fmt]
 bracket_spacing = true
 int_types = "long"

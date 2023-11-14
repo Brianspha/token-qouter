@@ -13,5 +13,5 @@ contract Errors {
     error InvalidAmountOut();
 
     // Define custom error: InvalidAmounts
-    error InvalidAmounts();
+    error InvalidAmounts(uint256 qoute,uint256 idealQoute);
 }

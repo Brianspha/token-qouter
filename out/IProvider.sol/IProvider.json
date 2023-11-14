@@ -119,19 +119,19 @@
   },
   "ast": {
     "absolutePath": "src/curve/IProvider.sol",
-    "id": 45627,
+    "id": 46156,
     "exportedSymbols": {
       "IProvider": [
-        45626
+        46155
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:423:32",
+    "src": "39:423:37",
     "nodes": [
       {
-        "id": 45616,
+        "id": 46145,
         "nodeType": "PragmaDirective",
-        "src": "39:24:32",
+        "src": "39:24:37",
         "nodes": [],
         "literals": [
           "solidity",
@@ -141,19 +141,19 @@
         ]
       },
       {
-        "id": 45626,
+        "id": 46155,
         "nodeType": "ContractDefinition",
-        "src": "175:286:32",
+        "src": "175:286:37",
         "nodes": [
           {
-            "id": 45625,
+            "id": 46154,
             "nodeType": "FunctionDefinition",
-            "src": "393:66:32",
+            "src": "393:66:37",
             "nodes": [],
             "documentation": {
-              "id": 45618,
+              "id": 46147,
               "nodeType": "StructuredDocumentation",
-              "src": "201:187:32",
+              "src": "201:187:37",
               "text": " @dev Get the address associated with a specific ID.\n @param _id The ID for which to retrieve the address.\n @return The address associated with the given ID."
             },
             "functionSelector": "493f4f74",
@@ -161,20 +161,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "get_address",
-            "nameLocation": "402:11:32",
+            "nameLocation": "402:11:37",
             "parameters": {
-              "id": 45621,
+              "id": 46150,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45620,
+                  "id": 46149,
                   "mutability": "mutable",
                   "name": "_id",
-                  "nameLocation": "422:3:32",
+                  "nameLocation": "422:3:37",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45625,
-                  "src": "414:11:32",
+                  "scope": 46154,
+                  "src": "414:11:37",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -182,10 +182,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45619,
+                    "id": 46148,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "414:7:32",
+                    "src": "414:7:37",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -194,21 +194,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "413:13:32"
+              "src": "413:13:37"
             },
             "returnParameters": {
-              "id": 45624,
+              "id": 46153,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45623,
+                  "id": 46152,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45625,
-                  "src": "450:7:32",
+                  "scope": 46154,
+                  "src": "450:7:37",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -216,10 +216,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45622,
+                    "id": 46151,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "450:7:32",
+                    "src": "450:7:37",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -229,9 +229,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "449:9:32"
+              "src": "449:9:37"
             },
-            "scope": 45626,
+            "scope": 46155,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -243,23 +243,23 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 45617,
+          "id": 46146,
           "nodeType": "StructuredDocumentation",
-          "src": "65:109:32",
+          "src": "65:109:37",
           "text": " @title IProvider\n @dev Interface for a provider contract that provides addresses based on an ID."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          45626
+          46155
         ],
         "name": "IProvider",
-        "nameLocation": "185:9:32",
-        "scope": 45627,
+        "nameLocation": "185:9:37",
+        "scope": 46156,
         "usedErrors": [],
         "usedEvents": []
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 32
+  "id": 37
 }

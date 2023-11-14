@@ -11,23 +11,34 @@
       "type": "error"
     },
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "qoute",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "idealQoute",
+          "type": "uint256"
+        }
+      ],
       "name": "InvalidAmounts",
       "type": "error"
     }
   ],
   "bytecode": {
     "object": "0x6080604052348015600f57600080fd5b50600980601d6000396000f3fe6080604052600080fd",
-    "sourceMap": "157:236:38:-:0;;;;;;;;;;;;;;;;;;;",
+    "sourceMap": "157:268:46:-:0;;;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
     "object": "0x6080604052600080fd",
-    "sourceMap": "157:236:38:-:0;;;;;",
+    "sourceMap": "157:268:46:-:0;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidAmountOut\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidAmounts\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Contract defining custom errors used in the TokenQouter contract.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Errors\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Errors.sol\":\"Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Errors.sol\":{\"keccak256\":\"0xcef6140e3ca52caf7ede7151e1868c5a88b0e1994717bbd3de174d11ade1c361\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ee503e9a599250f92ac55383bb3ae19d18d82d9b726b3777763f3318e0166e7b\",\"dweb:/ipfs/QmcBtiuzNAoHY9pVtoH4sprTjRf3dHwAJorCPpZxN6yYJm\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidAmountOut\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"qoute\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"idealQoute\",\"type\":\"uint256\"}],\"name\":\"InvalidAmounts\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Contract defining custom errors used in the TokenQouter contract.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Errors\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/utils/Errors.sol\":\"Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"appendCBOR\":false,\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"src/utils/Errors.sol\":{\"keccak256\":\"0x2ec9ccb25e98737f55dbf94e75f909fa22b2defd5df9500bda3d7a972169ec41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c6b78c97c68b7998b203c5427de19bc8016e414ee3a8ecbe44075ae7bad66d49\",\"dweb:/ipfs/QmWx4uD6vjKBaDT6RDrGv7pqcH2pXYXmTVMxbZeRQ9HUzP\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.20+commit.a1b79de6"
@@ -46,7 +57,18 @@
           "name": "InvalidAmountOut"
         },
         {
-          "inputs": [],
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "qoute",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "idealQoute",
+              "type": "uint256"
+            }
+          ],
           "type": "error",
           "name": "InvalidAmounts"
         }
@@ -87,10 +109,10 @@
     },
     "sources": {
       "src/utils/Errors.sol": {
-        "keccak256": "0xcef6140e3ca52caf7ede7151e1868c5a88b0e1994717bbd3de174d11ade1c361",
+        "keccak256": "0x2ec9ccb25e98737f55dbf94e75f909fa22b2defd5df9500bda3d7a972169ec41",
         "urls": [
-          "bzz-raw://ee503e9a599250f92ac55383bb3ae19d18d82d9b726b3777763f3318e0166e7b",
-          "dweb:/ipfs/QmcBtiuzNAoHY9pVtoH4sprTjRf3dHwAJorCPpZxN6yYJm"
+          "bzz-raw://c6b78c97c68b7998b203c5427de19bc8016e414ee3a8ecbe44075ae7bad66d49",
+          "dweb:/ipfs/QmWx4uD6vjKBaDT6RDrGv7pqcH2pXYXmTVMxbZeRQ9HUzP"
         ],
         "license": "MIT"
       }
@@ -99,19 +121,19 @@
   },
   "ast": {
     "absolutePath": "src/utils/Errors.sol",
-    "id": 46060,
+    "id": 46691,
     "exportedSymbols": {
       "Errors": [
-        46059
+        46690
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:362:38",
+    "src": "32:394:46",
     "nodes": [
       {
-        "id": 46051,
+        "id": 46678,
         "nodeType": "PragmaDirective",
-        "src": "32:24:38",
+        "src": "32:24:46",
         "nodes": [],
         "literals": [
           "solidity",
@@ -121,53 +143,108 @@
         ]
       },
       {
-        "id": 46059,
+        "id": 46690,
         "nodeType": "ContractDefinition",
-        "src": "157:236:38",
+        "src": "157:268:46",
         "nodes": [
           {
-            "id": 46054,
+            "id": 46681,
             "nodeType": "ErrorDefinition",
-            "src": "221:22:38",
+            "src": "221:22:46",
             "nodes": [],
             "errorSelector": "2c5211c6",
             "name": "InvalidAmount",
-            "nameLocation": "227:13:38",
+            "nameLocation": "227:13:46",
             "parameters": {
-              "id": 46053,
+              "id": 46680,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "240:2:38"
+              "src": "240:2:46"
             }
           },
           {
-            "id": 46056,
+            "id": 46683,
             "nodeType": "ErrorDefinition",
-            "src": "294:25:38",
+            "src": "294:25:46",
             "nodes": [],
             "errorSelector": "4e969c58",
             "name": "InvalidAmountOut",
-            "nameLocation": "300:16:38",
+            "nameLocation": "300:16:46",
             "parameters": {
-              "id": 46055,
+              "id": 46682,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "316:2:38"
+              "src": "316:2:46"
             }
           },
           {
-            "id": 46058,
+            "id": 46689,
             "nodeType": "ErrorDefinition",
-            "src": "368:23:38",
+            "src": "368:55:46",
             "nodes": [],
-            "errorSelector": "d856fc5a",
+            "errorSelector": "d80b49f3",
             "name": "InvalidAmounts",
-            "nameLocation": "374:14:38",
+            "nameLocation": "374:14:46",
             "parameters": {
-              "id": 46057,
+              "id": 46688,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "388:2:38"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46685,
+                  "mutability": "mutable",
+                  "name": "qoute",
+                  "nameLocation": "397:5:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46689,
+                  "src": "389:13:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 46684,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "389:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46687,
+                  "mutability": "mutable",
+                  "name": "idealQoute",
+                  "nameLocation": "411:10:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46689,
+                  "src": "403:18:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 46686,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "403:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "388:34:46"
             }
           }
         ],
@@ -177,27 +254,27 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 46052,
+          "id": 46679,
           "nodeType": "StructuredDocumentation",
-          "src": "58:98:38",
+          "src": "58:98:46",
           "text": " @title Errors\n @dev Contract defining custom errors used in the TokenQouter contract."
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          46059
+          46690
         ],
         "name": "Errors",
-        "nameLocation": "166:6:38",
-        "scope": 46060,
+        "nameLocation": "166:6:46",
+        "scope": 46691,
         "usedErrors": [
-          46054,
-          46056,
-          46058
+          46681,
+          46683,
+          46689
         ],
         "usedEvents": []
       }
     ],
     "license": "MIT"
   },
-  "id": 38
+  "id": 46
 }

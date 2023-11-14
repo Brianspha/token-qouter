@@ -51,88 +51,84 @@ contract TokenQouter is
      * @dev The split is based on the percentage of the best qoute
      *@dev we split the amountIn amongst the dexes to minimise loss although this is an assumption
      */
-    function swapExactETHToTokenOut() public payable whenNotPaused returns () {
+    function swapExactETHToTokenOut() public payable whenNotPaused {
         if (msg.value == 0) {
             revert InvalidAmount();
         }
-        uint256 amountOut;
-        uint256 amountIn = msg.value;
-        IWETH9(qouterParams.tokenIn).deposit{value: amountIn}();
+        address sender = _msgSender();
+        IWETH9(qouterParams.tokenIn).deposit{value: msg.value}();
         uint256[] memory qoutes;
         address optimalPool;
 
         (qoutes, optimalPool) = getQouteTokenInToTokenOut(
-            amountIn,
+            msg.value,
             qouterParams.poolFee
         );
 
-        uint256[] memory split = calculatePercentageSplit(qoutes);
-        uint256 idealQoute = _findMax(qoutes);
-        uint256 sushiAmountIn = getAmount(amountIn, split[0], amountIn);
-        uint256 curveAmountIn = getAmount(amountIn, split[1], amountIn);
-        uint256 uniswapAmountIn = getAmount(amountIn, split[2], amountIn);
-        {
-            //@dev avoid stack too deep error :XD
-            TransferHelper.safeApprove(
-                qouterParams.tokenIn,
-                address(qouterParams.uniswap),
-                uniswapAmountIn
-            );
-            //@dev swap selected is UniswapV3
-            ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
-                .ExactInputSingleParams({
-                    tokenIn: qouterParams.tokenIn,
-                    tokenOut: qouterParams.tokenOut,
-                    fee: qouterParams.poolFee,
-                    recipient: _msgSender(),
-                    deadline: block.timestamp + 1 minutes,
-                    amountIn: uniswapAmountIn,
-                    amountOutMinimum: 1, //@dev this is not ideal buuut for testing purpose we set this to 1
-                    sqrtPriceLimitX96: 0
-                });
-            // The call to `exactInputSingle` executes the swap.
-            uint256 amountOutUniswap = qouterParams.uniswap.exactInputSingle(
-                params
-            );
-            TransferHelper.safeApprove(
-                qouterParams.tokenIn,
-                address(qouterParams.curveSwap),
-                curveAmountIn
-            );
-            //@dev curve finance selected
-            uint256 amountOutCurve = qouterParams.curveSwap.exchange(
-                optimalPool,
-                qouterParams.tokenIn,
-                qouterParams.tokenOut,
-                curveAmountIn,
+        uint256[] memory splits = calculatePercentageSplit(qoutes);
+        uint256 sushiAmountIn = getAmount(msg.value, splits[0], msg.value);
+        uint256 curveAmountIn = getAmount(msg.value, splits[1], msg.value);
+        uint256 uniswapAmountIn = getAmount(msg.value, splits[2], msg.value);
+
+        TransferHelper.safeApprove(
+            qouterParams.tokenIn,
+            address(qouterParams.uniswap),
+            uniswapAmountIn
+        );
+        //@dev swap selected is UniswapV3
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
+            .ExactInputSingleParams({
+                tokenIn: qouterParams.tokenIn,
+                tokenOut: qouterParams.tokenOut,
+                fee: qouterParams.poolFee,
+                recipient: sender,
+                deadline: block.timestamp + 1 minutes,
+                amountIn: uniswapAmountIn,
+                amountOutMinimum: 1, //@dev this is not ideal buuut for testing purpose we set this to 1
+                sqrtPriceLimitX96: 0
+            });
+        // The call to `exactInputSingle` executes the swap.
+        uint256 amountOutUniswap = qouterParams.uniswap.exactInputSingle(
+            params
+        );
+        TransferHelper.safeApprove(
+            qouterParams.tokenIn,
+            address(qouterParams.curveSwap),
+            curveAmountIn
+        );
+        //@dev curve finance selected
+        uint256 amountOutCurve = qouterParams.curveSwap.exchange(
+            optimalPool,
+            qouterParams.tokenIn,
+            qouterParams.tokenOut,
+            curveAmountIn,
+            1,
+            _msgSender()
+        );
+        TransferHelper.safeApprove(
+            qouterParams.tokenIn,
+            address(qouterParams.sushiSwapRouter),
+            sushiAmountIn
+        );
+        address[] memory path = new address[](2);
+        path[0] = qouterParams.tokenIn;
+        path[1] = qouterParams.tokenOut;
+        //@dev sushi swap selected
+        uint[] memory amounts = qouterParams
+            .sushiSwapRouter
+            .swapExactTokensForTokens(
+                sushiAmountIn,
                 1,
-                _msgSender()
+                path,
+                _msgSender(),
+                block.timestamp + 1 minutes
             );
-            TransferHelper.safeApprove(
-                qouterParams.tokenIn,
-                address(qouterParams.sushiSwapRouter),
-                sushiAmountIn
-            );
-            address[] memory path = new address[](2);
-            path[0] = qouterParams.tokenIn;
-            path[1] = qouterParams.tokenOut;
-            //@dev sushi swap selected
-            uint[] memory amounts = qouterParams
-                .sushiSwapRouter
-                .swapExactTokensForTokens(
-                    sushiAmountIn,
-                    1,
-                    path,
-                    _msgSender(),
-                    block.timestamp + 1 minutes
-                );
-            uint256 amountOutSushi = amounts[0];
-            amountOut = (amountOutCurve + amountOutUniswap + amountOutSushi);
-            emit Swap(qouterParams.tokenIn, qouterParams.tokenOut, amountOut);
-        }
-        if (amountOut < idealQoute) {
-            revert InvalidAmounts();
-        }
+        uint256 amountOutSushi = amounts[0];
+        emit Swap(
+            qouterParams.tokenIn,
+            qouterParams.tokenOut,
+            amountOutCurve + amountOutUniswap + amountOutSushi
+        );
     }
 
     /**
@@ -145,13 +141,12 @@ contract TokenQouter is
         uint256 amount,
         uint24 poolFee
     ) public returns (uint256[] memory, address) {
-        uint160 sqrtPriceLimitX96 = 0;
         uint256 quoteUNISWAP = qouterParams.uniswapQuoter.quoteExactInputSingle(
             qouterParams.tokenIn,
             qouterParams.tokenOut,
             poolFee,
             amount,
-            sqrtPriceLimitX96
+            0
         );
         address poolAddress;
         uint256 quoteCurve;
@@ -160,7 +155,7 @@ contract TokenQouter is
             qouterParams.tokenOut,
             amount
         );
-        address[] memory path = address[](2);
+        address[] memory path = new address[](2);
         path[0] = qouterParams.tokenIn;
         path[1] = qouterParams.tokenOut;
         uint256[] memory amounts = qouterParams.sushiSwapRouter.getAmountsOut(
@@ -205,7 +200,7 @@ contract TokenQouter is
                 max = numbers[i];
             }
             unchecked {
-                i++;
+                ++i;
             }
         }
 
@@ -217,13 +212,20 @@ contract TokenQouter is
     ) public pure returns (uint256[] memory) {
         uint256 total = 0;
         uint256[] memory percentages = new uint256[](numbers.length);
-
-        for (uint256 i = 0; i < numbers.length; i++) {
+        uint256 i = 0;
+        uint length = numbers.length;
+        for (; i < length; ) {
             total += numbers[i];
+            unchecked {
+                ++i;
+            }
         }
-
-        for (uint256 i = 0; i < numbers.length; i++) {
+        i = 0;
+        for (; i < length; ) {
             percentages[i] = (numbers[i] * PRECISION) / total;
+            unchecked {
+                ++i;
+            }
         }
 
         return percentages;

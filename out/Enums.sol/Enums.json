@@ -10,19 +10,19 @@
   },
   "ast": {
     "absolutePath": "src/utils/Enums.sol",
-    "id": 45344,
+    "id": 46791,
     "exportedSymbols": {
       "PROTOCOL": [
-        45343
+        46790
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "41:100:33",
+    "src": "41:100:46",
     "nodes": [
       {
-        "id": 45338,
+        "id": 46785,
         "nodeType": "PragmaDirective",
-        "src": "41:24:33",
+        "src": "41:24:46",
         "nodes": [],
         "literals": [
           "solidity",
@@ -32,46 +32,46 @@
         ]
       },
       {
-        "id": 45343,
+        "id": 46790,
         "nodeType": "EnumDefinition",
-        "src": "68:72:33",
+        "src": "68:72:46",
         "nodes": [],
         "canonicalName": "PROTOCOL",
         "members": [
           {
-            "id": 45339,
+            "id": 46786,
             "name": "UNISWAPV3",
-            "nameLocation": "88:9:33",
+            "nameLocation": "88:9:46",
             "nodeType": "EnumValue",
-            "src": "88:9:33"
+            "src": "88:9:46"
           },
           {
-            "id": 45340,
+            "id": 46787,
             "name": "UNISWAPV2",
-            "nameLocation": "103:9:33",
+            "nameLocation": "103:9:46",
             "nodeType": "EnumValue",
-            "src": "103:9:33"
+            "src": "103:9:46"
           },
           {
-            "id": 45341,
+            "id": 46788,
             "name": "CURVE",
-            "nameLocation": "118:5:33",
+            "nameLocation": "118:5:46",
             "nodeType": "EnumValue",
-            "src": "118:5:33"
+            "src": "118:5:46"
           },
           {
-            "id": 45342,
+            "id": 46789,
             "name": "SUSHISWAP",
-            "nameLocation": "129:9:33",
+            "nameLocation": "129:9:46",
             "nodeType": "EnumValue",
-            "src": "129:9:33"
+            "src": "129:9:46"
           }
         ],
         "name": "PROTOCOL",
-        "nameLocation": "73:8:33"
+        "nameLocation": "73:8:46"
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 33
+  "id": 46
 }

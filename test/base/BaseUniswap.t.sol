@@ -50,7 +50,7 @@ abstract contract BaseUniswap is Test {
     uint256 defaultUSDCTokenSwap = 10 * 10 ** 6;
     uint256 defaultWETHTokenBalance = 100 ether;
     uint256 defaultUSDTTokenSwap = 10 * 10 ** 6;
-    uint256 public constant BLOCK_NUMBER_ETH = 18518953;
+    uint256 public constant BLOCK_NUMBER_ETH = 18567039;
 
     function setUp() public virtual {}
 
